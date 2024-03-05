@@ -1,0 +1,16 @@
+# MERCADO SIMPELS
+
+# Funcionalidade
+- Registrar Produtos (id, NOME, QUANTIDADE, PREÇO)
+- Deletar produto individualmente
+- Deletar todos os produtos
+- Mostrar Toast de produto adicionado
+- Ao adicionar produto aparecer snackbar com opção de desfazer (removendo o produto recem adicionado)
+
+# Tela
+- Título Aplicativo
+- Descrição Aplicativo
+- Total da compra
+- Aba de cadastro
+- Lista com os produtos
+- Botão para ir a uma activity com info do desenvolvedor
