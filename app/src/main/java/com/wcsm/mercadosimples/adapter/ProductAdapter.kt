@@ -81,7 +81,6 @@ class ProductAdapter(
             .setPositiveButton("DELETAR") {dialog, _ ->
                 onClickDelete(product.id)
                 dialog.dismiss()
-
             }
             .setNegativeButton("CANCELAR") {dialog, _ ->
                 dialog.dismiss()

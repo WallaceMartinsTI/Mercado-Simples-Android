@@ -2,6 +2,7 @@ package com.wcsm.mercadosimples
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import com.google.android.material.snackbar.Snackbar
@@ -31,7 +32,6 @@ class NewProductActivity : AppCompatActivity() {
 
             val newProduct = Product(id, name, quantity, price)
             addProduct(newProduct)
-
             finish()
         }
     }
