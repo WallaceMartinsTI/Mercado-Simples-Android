@@ -3,6 +3,7 @@ package com.wcsm.mercadosimples.database
 import android.content.ContentValues
 import android.content.Context
 import android.util.Log
+import com.wcsm.mercadosimples.database.DatabaseHelper.Companion.LOG_INFO_DB
 import com.wcsm.mercadosimples.model.Product
 
 class ProductDAO(context: Context) : IProductDAO {
@@ -19,10 +20,10 @@ class ProductDAO(context: Context) : IProductDAO {
 
         try {
             writing.insert(DatabaseHelper.TABLE_NAME, null, content)
-            Log.i(DatabaseHelper.LOG_INFO_DB, "PRODUCT saved successfully")
+            Log.i(LOG_INFO_DB, "PRODUCT saved successfully")
         } catch (e: Exception) {
             e.printStackTrace()
-            Log.i(DatabaseHelper.LOG_INFO_DB, "Error SAVING product")
+            Log.i(LOG_INFO_DB, "Error SAVING product")
             return false
         }
 
@@ -37,10 +38,10 @@ class ProductDAO(context: Context) : IProductDAO {
                 "${DatabaseHelper.COL_PRODUCT_ID} = ?",
                 args
             )
-            Log.i(DatabaseHelper.LOG_INFO_DB, "PRODUCT deleted successfully")
+            Log.i(LOG_INFO_DB, "PRODUCT deleted successfully")
         } catch (e: Exception) {
             e.printStackTrace()
-            Log.i(DatabaseHelper.LOG_INFO_DB, "Error DELETING product")
+            Log.i(LOG_INFO_DB, "Error DELETING product")
             return false
         }
 
@@ -50,10 +51,10 @@ class ProductDAO(context: Context) : IProductDAO {
     override fun deleteALlProducts() : Boolean {
         try {
             writing.delete(DatabaseHelper.TABLE_NAME, null, null)
-            Log.i(DatabaseHelper.LOG_INFO_DB, "ALL PRODUCT deleted successfully")
+            Log.i(LOG_INFO_DB, "ALL PRODUCT deleted successfully")
         } catch (e: Exception) {
             e.printStackTrace()
-            Log.i(DatabaseHelper.LOG_INFO_DB, "Error DELETING ALL product")
+            Log.i(LOG_INFO_DB, "Error DELETING ALL product")
             return false
         }
 

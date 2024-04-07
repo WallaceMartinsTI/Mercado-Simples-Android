@@ -7,4 +7,5 @@ interface IProductDAO {
     fun delete(productId: String): Boolean
     fun deleteALlProducts(): Boolean
     fun listProducts(): MutableList<Product>
+
 }
