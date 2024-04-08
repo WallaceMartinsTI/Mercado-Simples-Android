@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +12,6 @@ import com.wcsm.mercadosimples.adapter.ProductAdapter
 import com.wcsm.mercadosimples.database.ProductDAO
 import com.wcsm.mercadosimples.databinding.ActivityMainBinding
 import com.wcsm.mercadosimples.model.Product
-import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     
