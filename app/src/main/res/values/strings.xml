@@ -2,4 +2,8 @@
     <string name="app_name">Mercado Simples</string>
     <string name="app_description">O valor de sua compra em tempo real</string>
     <string name="add_product">Adicionar produto</string>
+    <string name="add_product_screen_hint_product_name">Nome do Produto</string>
+    <string name="add_product_screen_hint_product_quantity">Quantidade</string>
+    <string name="add_product_screen_hint_product_price">Preço</string>
+    <string name="add_product_screen_add_product_button">ADICIONAR</string>
 </resources>

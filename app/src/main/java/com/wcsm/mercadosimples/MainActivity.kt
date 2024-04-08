@@ -1,17 +1,17 @@
 package com.wcsm.mercadosimples
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.wcsm.mercadosimples.adapter.ProductAdapter
 import com.wcsm.mercadosimples.database.ProductDAO
 import com.wcsm.mercadosimples.databinding.ActivityMainBinding
 import com.wcsm.mercadosimples.model.Product
-import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     
@@ -44,7 +44,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnClearAllProducts.setOnClickListener {
-            clearAllProducts()
+            if(productsList.isEmpty()) {
+                Toast.makeText(this, "Não há produtos na lista.", Toast.LENGTH_SHORT).show()
+            } else {
+                confirmDeleteAllTasksDialog()
+            }
         }
 
         isAppFirstInitialization = savedInstanceState == null
@@ -66,8 +70,22 @@ class MainActivity : AppCompatActivity() {
         isAppFirstInitialization = false
     }
 
+    private fun confirmDeleteAllTasksDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Deletar Todos Produto")
+            .setMessage("Tem certeza que deseja deletar todos os produto?")
+            .setPositiveButton("DELETAR") {dialog, _ ->
+                deleteAllProducts()
+                dialog.dismiss()
+            }
+            .setNegativeButton("CANCELAR") {dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
+
     private fun showSnackbar(view: View, name: String, id: String) {
-        val snackBar = Snackbar.make(view, "$name Adicionado!", Snackbar.LENGTH_LONG)
+        val snackBar = Snackbar.make(view, "$name Adicionado!", Snackbar.LENGTH_SHORT)
         snackBar.setAction("Desfazer") {
             productDAO.delete(id)
             updateProductsList()
@@ -80,7 +98,7 @@ class MainActivity : AppCompatActivity() {
         updateProductsList()
     }
 
-    private fun clearAllProducts() {
+    private fun deleteAllProducts() {
         productDAO.deleteALlProducts()
         updateProductsList()
     }
