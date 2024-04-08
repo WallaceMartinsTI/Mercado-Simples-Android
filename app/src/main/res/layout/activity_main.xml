@@ -116,7 +116,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#9F0D40"
-        android:text="LIMPAR PRODUTOS"
+        android:text="LIMPAR TODOS PRODUTOS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fabAddProduct"
         app:layout_constraintStart_toStartOf="parent" />
